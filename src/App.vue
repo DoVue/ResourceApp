@@ -1,15 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ResourceItem msg="Welcome to Your Vue.js App"/>
+  <ul></ul>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ResourceItem from './components/learning-resources/ResourceItem';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ResourceItem
+  },
+  data() {
+    return {
+      storedResources: [
+        {
+          id: 'official-guide',
+          title: 'Official Guide',
+          description: 'The official VueJS documentation',
+          link: 'https://vuejs.org/v2/guide/'
+        },
+        {
+          id: 'google',
+          title: 'Google',
+          description: 'Learn to Google...',
+          link: 'https://google.org'
+        }
+      ]
+    }
   }
 }
 </script>
