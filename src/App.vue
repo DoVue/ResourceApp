@@ -1,44 +1,33 @@
 <template>
-  <ResourceItem msg="Welcome to Your Vue.js App"/>
-  <ul></ul>
+  <the-header title="Remember Me"></the-header>
+  <the-resources></the-resources>
 </template>
 
 <script>
-import ResourceItem from './components/learning-resources/ResourceItem';
+
+import TheHeader from "./components/layouts/TheHeader";
+import TheResources from "./components/learning-resources/TheResources";
 
 export default {
-  name: 'App',
   components: {
-    ResourceItem
+    TheHeader,
+    TheResources
   },
-  data() {
-    return {
-      storedResources: [
-        {
-          id: 'official-guide',
-          title: 'Official Guide',
-          description: 'The official VueJS documentation',
-          link: 'https://vuejs.org/v2/guide/'
-        },
-        {
-          id: 'google',
-          title: 'Google',
-          description: 'Learn to Google...',
-          link: 'https://google.org'
-        }
-      ]
-    }
-  }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
 }
 </style>

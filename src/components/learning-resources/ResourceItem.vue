@@ -1,39 +1,61 @@
 <template>
   <li>
-    <div>
+    <base-card>
       <header>
-        <h3></h3>
-        <button>Delete</button>
+        <h3>{{ title }}</h3>
+        <base-button mode="flat">Delete</base-button>
       </header>
-    </div>
-    <p></p>
-    <nav><a href="">View Resource</a></nav>
+     <p>{{ description }}</p>
+     <nav>
+       <a :href="link">View Resource</a>
+     </nav>
+    </base-card>
   </li>
 </template>
 
 <script>
+import BaseButton from '../UI/BaseButton.vue';
 export default {
+  components: { BaseButton },
   name: "ResourceItem",
   props: {
-    msg: String,
+    title: String,
+    description: String,
+    link: String,
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
 li {
-  display: inline-block;
-  margin: 0 10px;
+  margin: auto;
+  max-width: 40rem;
+  margin-top: 1rem;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
 a {
-  color: #42b983;
+  text-decoration: none;
+  color: #ce5c00;
+}
+
+a:hover,
+a:active {
+  color: #c89300;
 }
 </style>
